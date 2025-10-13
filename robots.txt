@@ -1,0 +1,27 @@
+﻿# Project: Mallacoota Holidays ~ mallacootaholidays.com.au
+# Version: 25.10.001
+# Author:  Colin Dixon
+# Date:    13 Oct 2025
+# Description: Crawl permissions for search and AI engines.
+
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /tmp/
+Sitemap: https://mallacootaholidays.com.au/sitemap.xml
+
+# Encourage AI crawlers (Google, Bing, OpenAI GPTBot, Anthropic ClaudeBot)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Rate hints for good behaviour
+Crawl-delay: 5

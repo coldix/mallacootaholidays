@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+# Project: Mallacoota Holidays ~ mallacootaholidays.com.au
+# Author:  Colin Dixon
+# Version: 25.10.001
+# Description: XML sitemap optimised for Google, Bing, and AI crawler discovery.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Home -->
+  <url>
+    <loc>https://mallacootaholidays.com.au/</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mallacootaholidays.com.au/images/og-hero.jpg</image:loc>
+      <image:caption>Mallacoota Inlet and beaches – Victoria’s far east coast</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Accommodation -->
+  <url>
+    <loc>https://lovemallacoota.com.au/accom.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Food & Drink -->
+  <url>
+    <loc>https://lovemallacoota.com.au/food.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Activities -->
+  <url>
+    <loc>https://lovemallacoota.com.au/activity.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://coota.au/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Related Oze Network Links -->
+  <url><loc>https://oze.au/</loc><priority>0.4</priority></url>
+  <url><loc>https://ozol.au/</loc><priority>0.4</priority></url>
+  <url><loc>https://dixon.au/</loc><priority>0.3</priority></url>
+  <url><loc>https://dronecraft.au/</loc><priority>0.3</priority></url>
+  <url><loc>https://calendar.oze.au/</loc><priority>0.3</priority></url>
+  <url><loc>https://art.oze.au/</loc><priority>0.3</priority></url>
+  <url><loc>https://music.oze.au/</loc><priority>0.3</priority></url>
+
+</urlset>

@@ -1,0 +1,68 @@
+﻿{
+  "name": "Mallacoota Holidays",
+  "short_name": "Mallacoota",
+  "description": "Plan your Mallacoota holiday — accommodation, dining, beaches and activities on Victoria’s Far East coast.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+
+  "background_color": "#0f1215",
+  "theme_color": "#2b7de9",
+
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+
+  "categories": ["travel", "tourism", "local", "australia", "holiday"],
+  "dir": "ltr",
+  "lang": "en-AU",
+
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://coota.au/"
+    },
+    {
+      "platform": "webapp",
+      "url": "https://oze.au/"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "/images/og-hero.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "label": "Mallacoota Inlet from Above"
+    },
+    {
+      "src": "/images/background-03.webp",
+      "sizes": "1920x1080",
+      "type": "image/webp",
+      "label": "Beach and Headland at Sunset"
+    }
+  ]
+}
