@@ -1,0 +1,30 @@
+# --- Permanent Redirects for mallacootaholidays.com.au ---
+
+# This permanently moves (301) old WordPress links to the new homepage.
+
+# Based on Google search results 22/10/2025
+
+# --- Specific Pages Found on Google ---
+
+Redirect 301 /privacy/ /
+Redirect 301 /gallery/ /
+Redirect 301 /food/ /
+Redirect 301 /blog/ /
+Redirect 301 /packages/ /
+Redirect 301 /contact/ /
+Redirect 301 /mallacoota-2020/ /
+Redirect 301 /silver-bream-flats/ /
+Redirect 301 /silver-bream-motel/ /
+
+# --- Catch-all for /stay/ and all its child pages ---
+
+# Catches /stay/, /stay/room/, /stay/flat/, /stay/house/bruce...
+
+RedirectMatch 301 ^/stay/.\* /
+
+# --- Other common WP folders (just in case) ---
+
+Redirect 301 /listings/ /
+Redirect 301 /category/ /
+Redirect 301 /tag/ /
+RedirectMatch 301 ^/[0-9]{4}/ /

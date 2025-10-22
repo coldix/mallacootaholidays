@@ -2,15 +2,15 @@
 # Project:     Mallacoota Holidays ~ mallacootaholidays.com.au
 # Author:      Colin Dixon BSc, DipEd, Cert IV TAE
 # Contact:     crdixon@gmail.com
-# Timestamp:   11/10/2025 02:15 PM AEDT (Mallacoota)
-# Version:     [25.10.010]
+# Timestamp:   14/10/2025 11:55 AM AEDT (Mallacoota)
+# Version:     [25.10.012]
 # File Name:   script.js
-# Description: Handles theme switching, background image, and footer info.
+# Description: Handles theme switching, background image, and footer info. Updated to use the correct set of 6 background images.
 */
 document.addEventListener("DOMContentLoaded", () => {
   // --- Version Info ---
-  const FILE_VERSION = "25.10.010";
-  const FILE_DATE = "11 Oct 2025";
+  const FILE_VERSION = "25.10.012";
+  const FILE_DATE = "14 Oct 2025";
   // --- Theme Toggler ---
   const themeToggleButton = document.getElementById("theme-toggle");
   const themeLabel = document.getElementById("theme-label");
@@ -45,7 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Background Image ---
   const setRandomBackground = () => {
-    const backgrounds = ["images/sunriselake.webp"];
+    const backgrounds = Array.from(
+      { length: 6 },
+      (_, i) => `images/background-0${i + 1}.webp`
+    );
     document.body.style.backgroundImage = `url('${
       backgrounds[Math.floor(Math.random() * backgrounds.length)]
     }')`;

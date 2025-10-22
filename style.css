@@ -2,10 +2,10 @@
 # Project:     Mallacoota Holidays ~ mallacootaholidays.com.au
 # Author:      Colin Dixon BSc, DipEd, Cert IV TAE
 # Contact:     crdixon@gmail.com
-# Timestamp:   11/10/2025 02:15 PM AEDT (Mallacoota)
-# Version:     [25.10.010]
+# Timestamp:   14/10/2025 10:51 AM AEDT (Mallacoota)
+# Version:     [25.10.031]
 # File Name:   style.css
-# Description: Main stylesheet for the OzeGlass theme and page content.
+# Description: Main stylesheet for the OzeGlass theme. Added .glass-card-wide for feature grid layout.
 */
 :root {
   --font-family-sans: system-ui, -apple-system, "Segoe UI", "Roboto",
@@ -114,6 +114,9 @@ a:hover {
   width: 100%;
   max-width: var(--max-width);
 }
+.glass-card-wide {
+  max-width: 1200px;
+}
 .hero-card {
   text-align: center;
 }
@@ -150,37 +153,48 @@ p {
   margin-bottom: 0;
 }
 
-/* --- Eat & Drink Venues --- */
-.venue-grid {
+/* --- Feature Grid (Replaces Venue Grid) --- */
+.feature-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   width: 100%;
   margin-top: 1rem;
 }
-@media (max-width: 900px) {
-  .venue-grid {
-    grid-template-columns: 1fr;
+@media (min-width: 600px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-.venue-card {
+@media (min-width: 992px) {
+  .feature-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.feature-card-link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.feature-card {
   background: var(--glass-fill);
   border-radius: var(--border-radius);
   border: 1px solid var(--glass-border);
   padding: 1.25rem;
   box-shadow: var(--shadow);
+  height: 100%;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
-.venue-card h4 {
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.4);
+}
+.feature-card h4 {
   margin-bottom: 0.75rem;
   font-size: 1.15rem;
 }
-.venue-card ul {
-  list-style: none;
-  padding-left: 0;
-}
-.venue-card li {
-  margin-bottom: 0.4rem;
+.feature-card p {
   font-size: 0.98rem;
+  margin-bottom: 0;
 }
 
 /* --- Theme Toggle --- */
