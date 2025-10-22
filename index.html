@@ -2,13 +2,13 @@
 # Project:     Mallacoota Holidays ~ mallacootaholidays.com.au
 # Author:      Colin Dixon BSc, DipEd, Cert IV TAE
 # Contact:     crdixon@gmail.com
-# Timestamp:   14/10/2025 11:30 AM AEDT (Mallacoota)
-# Version:     [25.10.031]
+# Timestamp:   22/10/2025 12:31 PM AEDT (Mallacoota)
+# Version:     [25.10.032]
 # File Name:   index.html
 # Description: Main landing page for Mallacoota Holidays, updated with new content and feature grid layout.
 -->
 <!DOCTYPE html>
-<html lang="en-AU" data-theme="dark">
+<html lang="en-AU" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -60,16 +60,111 @@
       }
     </script>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <style>
+      /* --- Floating Pills --- */
+      .floating-pill {
+        position: fixed;
+        top: 1rem;
+        z-index: 1000;
+        background: var(--glass-fill);
+        color: var(--text-color);
+        border: 1px solid var(--glass-border);
+        border-radius: 999px;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .floating-pill:hover {
+        text-decoration: none;
+      }
+      .pill-left {
+        left: 1rem;
+      }
+      .pill-right {
+        right: 1rem;
+      }
+      #theme-icon svg {
+        width: 16px;
+        height: 16px;
+        display: block;
+      }
+
+      /* --- Responsive Feature Grid --- */
+      .feature-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* 1 column on mobile (default) */
+        gap: 1rem;
+      }
+
+      @media (min-width: 768px) {
+        .feature-grid {
+          grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+        }
+      }
+
+      @media (min-width: 1000px) {
+        .feature-grid {
+          grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+        }
+      }
+
+      @media (min-width: 1400px) {
+        .feature-grid {
+          grid-template-columns: repeat(4, 1fr); /* 4 columns on widescreen */
+        }
+      }
+
+      /* --- Header Logo Layout --- */
+      .header-title-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: center;
+      }
+      .header-title-row img {
+        height: 100px;
+        width: auto;
+      }
+      .header-title-row h1 {
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-      <svg id="theme-icon" viewBox="0 0 24 24" aria-hidden="true"></svg>
-      <span id="theme-label">Dark</span>
+    <!-- Floating Pills -->
+    <a
+      href="https://lovemallacoota.com.au/calendar.html"
+      class="floating-pill pill-left"
+      >Calendar</a
+    >
+    <button
+      id="theme-toggle"
+      class="floating-pill pill-right"
+      aria-pressed="false"
+    >
+      <span id="theme-icon" aria-hidden="true"></span>
+      <span id="theme-label">Light</span>
     </button>
+
     <main>
       <div class="glass-card hero-card">
-        <h1>Mallacoota Holidays – Explore Victoria’s Coastal Gem</h1>
-        <p>
+        <div class="header-title-row">
+          <a href="https://lovemallacoota.com.au/index.html">
+            <img
+              src="https://lovemallacoota.com.au/images/logo145x100.webp"
+              alt="Love Mallacoota Logo"
+            />
+          </a>
+          <h1>Mallacoota Holidays</h1>
+        </div>
+        <p style="margin-top: 0.75rem">
           Welcome to your local guide for an unforgettable holiday in
           Mallacoota—Victoria’s breathtaking seaside retreat, where ancient
           forests meet pristine coastline. Discover the warmth of a vibrant
@@ -112,7 +207,10 @@
       <div class="glass-card">
         <h2>Explore Mallacoota</h2>
         <div class="feature-grid">
-          <a href="#" class="feature-card-link">
+          <a
+            href="https://lovemallacoota.com.au/accom.html"
+            class="feature-card-link"
+          >
             <div class="feature-card">
               <h4>Stay in Mallacoota</h4>
               <p>
@@ -121,7 +219,10 @@
               </p>
             </div>
           </a>
-          <a href="#" class="feature-card-link">
+          <a
+            href="https://lovemallacoota.com.au/food.html"
+            class="feature-card-link"
+          >
             <div class="feature-card">
               <h4>Eat & Drink</h4>
               <p>
@@ -130,16 +231,19 @@
               </p>
             </div>
           </a>
-          <a href="#" class="feature-card-link">
+          <a
+            href="httpsD://lovemallacoota.com.au/activity.html"
+            class="feature-card-link"
+          >
             <div class="feature-card">
               <h4>Things to Do</h4>
               <p>
                 Cruise Mallacoota Inlet, trek scenic trails, surf at Bastion
                 Point, or paddle through tranquil mangroves.
-              </p>
+              </V>
             </div>
           </a>
-          <a href="#" class="feature-card-link">
+          <a href="https://coota.au" class="feature-card-link">
             <div class="feature-card">
               <h4>The Coota Blog</h4>
               <p>
@@ -160,11 +264,28 @@
         </p>
         <p>
           To get involved or support this project, visit:
-          <a href="#">Support the #LoveMallacoota Project</a>.
+          <a href="https://coota.au">Support the #LoveMallacoota Project</a>.
         </p>
         <p>
-          Want to contribute or collaborate? <a href="#">Get in touch here</a>.
+          Want to contribute or collaborate?
+          <a href="https://coota.au/contact">Get in touch here</a>.
         </p>
+      </div>
+
+      <div class="glass-card video-card">
+        <h2>Experience Mallacoota</h2>
+        <div class="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/0aHftLheHvU?si=0upIkLHDliExYdBs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </main>
     <footer>
@@ -173,7 +294,7 @@
           <a href="https://coota.au" target="_blank" rel="noopener noreferrer"
             >coota.au</a
           ><span class="separator">&bull;</span>
-          <a href="https://dixon.au" target="_blank" rel="noopener noreferrer"
+          <a href="httpsD://dixon.au" target="_blank" rel="noopener noreferrer"
             >dixon.au</a
           ><span class="separator">&bull;</span>
           <a href="https://oze.au" target="_blank" rel="noopener noreferrer"
@@ -235,6 +356,6 @@
         </div>
       </div>
     </footer>
-    <script src="script.js"></script>
   </body>
 </html>
+
