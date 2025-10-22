@@ -2,10 +2,10 @@
 # Project:     Mallacoota Holidays ~ mallacootaholidays.com.au
 # Author:      Colin Dixon BSc, DipEd, Cert IV TAE
 # Contact:     crdixon@gmail.com
-# Timestamp:   22/10/2025 12:44 PM AEDT (Mallacoota)
-# Version:     [25.10.034]
+# Timestamp:   22/10/2025 12:51 PM AEDT (Mallacoota)
+# Version:     [25.10.035]
 # File Name:   index.html
-# Description: Main landing page for Mallacoota Holidays. Video moved and social box updated.
+# Description: Fixed footer links, reworked About section, and cleaned up links in cards.
 -->
 <!DOCTYPE html>
 <html lang="en-AU" data-theme="light">
@@ -148,14 +148,14 @@
             Join on Facebook
           </a>
           <a
-            href="https://www.youtube.com/@visitmallacoota"
+            href="https://www.youtube.com/@mallacoota2020"
             class="social-button"
             target="_blank"
             rel="noopener noreferrer"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
-                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"
               />
             </svg>
             Watch on YouTube
@@ -222,21 +222,31 @@
       <div class="glass-card">
         <h2>About & Support</h2>
         <p>
-          Mallacoota Holidays is part of the #LoveMallacoota initiative by
-          Mallacoota2020, a community-driven project funded by Colin Dixon’s
-          business and supported by your contributions.
+          This site is part of the #LoveMallacoota initiative by
+          <a href="https://coota.au" target="_blank" rel="noopener noreferrer"
+            >Mallacoota2020</a
+          >, a community project funded by Colin Dixon’s business. We rely on
+          your contributions to keep this resource going.
         </p>
-        <p>
-          To get involved or support this project, visit:
-          <a href="https://coota.au">Support the #LoveMallacoota Project</a>.
-        </p>
-        <p>
-          Want to contribute or collaborate?
-          <a href="https://coota.au/contact">Get in touch here</a>.
-        </p>
+        <div class="social-button-row">
+          <a
+            href="https://coota.au"
+            class="pill-button-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn More & Support
+          </a>
+          <a
+            href="https://coota.au/contact"
+            class="pill-button-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get in Touch
+          </a>
+        </div>
       </div>
-
-      <!-- The old video card that was here has been removed -->
     </main>
     <footer>
       <div class="footer-content">
@@ -260,24 +270,25 @@
             >dronecraft.au</a
           >
         </div>
+        <!-- FIXED: Replaced visitmallacoota with lovemallacoota and mallacoota2020 -->
         <div class="footer-section social-links">
           <a
-            href="https://www.facebook.com/visitmallacoota"
+            href="https://www.facebook.com/lovemallacoota"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit Mallacoota on Facebook"
+            aria-label="Love Mallacoota on Facebook"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
-                d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.494v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.323-1.325z"
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.72 9-4.94 9-9.95z"
               />
             </svg>
           </a>
           <a
-            href="https://www.instagram.com/visitmallacoota"
+            href="https://www.instagram.com/lovemallacoota"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit Mallacoota on Instagram"
+            aria-label="Love Mallacoota on Instagram"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -286,14 +297,14 @@
             </svg>
           </a>
           <a
-            href="https://www.youtube.com/@visitmallacoota"
+            href="https://www.youtube.com/@mallacoota2020"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit Mallacoota on YouTube"
+            aria-label="Mallacoota 2020 on YouTube"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
-                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"
               />
             </svg>
           </a>

@@ -2,10 +2,10 @@
 # Project:     Mallacoota Holidays ~ mallacootaholidays.com.au
 # Author:      Colin Dixon BSc, DipEd, Cert IV TAE
 # Contact:     crdixon@gmail.com
-# Timestamp:   22/10/2025 12:38 PM AEDT (Mallacoota)
-# Version:     [25.10.032]
+# Timestamp:   22/10/2025 12:51 PM AEDT (Mallacoota)
+# Version:     [25.10.034]
 # File Name:   style.css
-# Description: Main stylesheet for the OzeGlass theme. Updated max-width and merged feature grid.
+# Description: Resized .social-button and added .pill-button-link for About section.
 */
 :root {
   --font-family-sans: system-ui, -apple-system, "Segoe UI", "Roboto",
@@ -13,7 +13,6 @@
   --border-radius: 12px;
   --spacing-unit: 1rem;
   --transition-speed: 0.3s;
-  /* CHANGED: Increased max-width to allow for wider layouts */
   --max-width: 1400px;
   --bg-color-light: #f0f2f5;
   --text-color-light: #1c1e21;
@@ -91,7 +90,6 @@ main {
   gap: calc(var(--spacing-unit) * 1.5);
   padding: var(--spacing-unit);
   width: 100%;
-  /* Increased padding-top to make space for floating pills */
   padding-top: 6rem;
   padding-bottom: 2rem;
 }
@@ -99,7 +97,6 @@ a {
   color: var(--link-color);
   text-decoration: none;
 }
-/* REMOVED: Underline on hover */
 /* a:hover {
   text-decoration: underline;
 } */
@@ -117,10 +114,6 @@ a {
   width: 100%;
   max-width: var(--max-width);
 }
-/* REMOVED: .glass-card-wide is no longer needed as main max-width is wider */
-/* .glass-card-wide {
-  max-width: 1200px;
-} */
 .hero-card {
   text-align: center;
 }
@@ -138,6 +131,10 @@ h2 {
 }
 p {
   margin-bottom: 1rem;
+}
+/* Ensure last p element in a card has no bottom margin */
+p:last-child {
+  margin-bottom: 0;
 }
 .glass-card ul {
   list-style-position: inside;
@@ -157,10 +154,10 @@ p {
   margin-bottom: 0;
 }
 
-/* --- Responsive Feature Grid (Merged from index.html) --- */
+/* --- Responsive Feature Grid --- */
 .feature-grid {
   display: grid;
-  grid-template-columns: 1fr; /* 1 column on mobile (default) */
+  grid-template-columns: 1fr;
   gap: 1rem;
   width: 100%;
   margin-top: 1rem;
@@ -168,19 +165,19 @@ p {
 
 @media (min-width: 768px) {
   .feature-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1000px) {
   .feature-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1400px) {
   .feature-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns on widescreen */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -210,7 +207,59 @@ p {
   margin-bottom: 0;
 }
 
-/* --- Floating Pills (Merged from index.html) --- */
+/* --- Social Button Row --- */
+.social-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* Reduced gap */
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 0.5rem 1rem; /* Reduced padding */
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem; /* Reduced font size */
+  transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+}
+.social-button:hover {
+  background: var(--btn-hover-bg);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.social-button svg {
+  width: 16px; /* Reduced icon size */
+  height: 16px;
+  fill: currentColor;
+}
+
+/* --- NEW: Pill Button Link (for About section) --- */
+.pill-button-link {
+  display: inline-block;
+  background: var(--glass-fill);
+  color: var(--text-color);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  margin: 0 0.25rem; /* Added margin for spacing */
+}
+.pill-button-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+}
+
+/* --- Floating Pills --- */
 .floating-pill {
   position: fixed;
   top: 1rem;
@@ -245,7 +294,7 @@ p {
   fill: currentColor;
 }
 
-/* --- Header Logo Layout (Merged from index.html) --- */
+/* --- Header Logo Layout --- */
 .header-title-row {
   display: flex;
   align-items: center;
@@ -260,10 +309,6 @@ p {
   margin: 0;
 }
 
-/* --- Old Theme Toggle (No longer needed) --- */
-/* .theme-toggle { ... }
-*/
-
 /* --- Footer --- */
 footer {
   width: 100vw;
@@ -274,7 +319,6 @@ footer {
   margin: 0;
   background: var(--glass-fill);
   text-align: center;
-  /* Ensure footer is also wide */
   max-width: 100%;
 }
 .footer-content {
@@ -282,7 +326,6 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  /* Constrain footer content to match main content */
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
@@ -320,7 +363,7 @@ footer {
 .social-links a:hover {
   transform: scale(1.1);
   color: var(--link-color);
-  text-decoration: none; /* Explicitly remove hover here too */
+  text-decoration: none;
 }
 .copyright-section {
   font-size: 0.875rem;
