@@ -2,10 +2,10 @@
 # Project:     Mallacoota Holidays ~ mallacootaholidays.com.au
 # Author:      Colin Dixon BSc, DipEd, Cert IV TAE
 # Contact:     crdixon@gmail.com
-# Timestamp:   22/10/2025 12:31 PM AEDT (Mallacoota)
-# Version:     [25.10.032]
+# Timestamp:   22/10/2025 12:44 PM AEDT (Mallacoota)
+# Version:     [25.10.034]
 # File Name:   index.html
-# Description: Main landing page for Mallacoota Holidays, updated with new content and feature grid layout.
+# Description: Main landing page for Mallacoota Holidays. Video moved and social box updated.
 -->
 <!DOCTYPE html>
 <html lang="en-AU" data-theme="light">
@@ -61,81 +61,6 @@
     </script>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <style>
-      /* --- Floating Pills --- */
-      .floating-pill {
-        position: fixed;
-        top: 1rem;
-        z-index: 1000;
-        background: var(--glass-fill);
-        color: var(--text-color);
-        border: 1px solid var(--glass-border);
-        border-radius: 999px;
-        padding: 0.5rem 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        box-shadow: var(--shadow);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        text-decoration: none;
-        font-weight: 600;
-      }
-      .floating-pill:hover {
-        text-decoration: none;
-      }
-      .pill-left {
-        left: 1rem;
-      }
-      .pill-right {
-        right: 1rem;
-      }
-      #theme-icon svg {
-        width: 16px;
-        height: 16px;
-        display: block;
-      }
-
-      /* --- Responsive Feature Grid --- */
-      .feature-grid {
-        display: grid;
-        grid-template-columns: 1fr; /* 1 column on mobile (default) */
-        gap: 1rem;
-      }
-
-      @media (min-width: 768px) {
-        .feature-grid {
-          grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
-        }
-      }
-
-      @media (min-width: 1000px) {
-        .feature-grid {
-          grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
-        }
-      }
-
-      @media (min-width: 1400px) {
-        .feature-grid {
-          grid-template-columns: repeat(4, 1fr); /* 4 columns on widescreen */
-        }
-      }
-
-      /* --- Header Logo Layout --- */
-      .header-title-row {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        justify-content: center;
-      }
-      .header-title-row img {
-        height: 100px;
-        width: auto;
-      }
-      .header-title-row h1 {
-        margin: 0;
-      }
-    </style>
   </head>
   <body>
     <!-- Floating Pills -->
@@ -187,21 +112,55 @@
             Mallacoota offers it all.
           </li>
         </ul>
+        <div class="video-container" style="margin-top: 1.5rem">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/0aHftLheHvU?si=0upIkLHDliExYdBs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
 
       <div class="glass-card">
-        <h2>Discover @mallacoota2020 on Social Media and YouTube</h2>
-        <p>
-          Follow @mallacoota2020—your insider’s look at Mallacoota, featuring
-          nearly 1,000 unique videos capturing the region’s beauty through every
-          season. Explore hidden spots, local events, and breathtaking
-          vistas—many set to exclusive, first-class original soundtracks.
-        </p>
+        <h2>Follow the Local Story</h2>
         <p>
           Experience Mallacoota from home or plan your trip with authentic
-          footage and inspiring local scenes—there’s something new to discover
-          every week.
+          footage and inspiring local scenes. Follow @mallacoota2020 and join
+          the Mallacoota Now Facebook group to see what's happening.
         </p>
+        <div class="social-button-row">
+          <a
+            href="https://www.facebook.com/groups/mallacootanow"
+            class="social-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.72 9-4.94 9-9.95z"
+              />
+            </svg>
+            Join on Facebook
+          </a>
+          <a
+            href="https://www.youtube.com/@visitmallacoota"
+            class="social-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+              />
+            </svg>
+            Watch on YouTube
+          </a>
+        </div>
       </div>
 
       <div class="glass-card">
@@ -232,7 +191,7 @@
             </div>
           </a>
           <a
-            href="httpsD://lovemallacoota.com.au/activity.html"
+            href="https://lovemallacoota.com.au/activity.html"
             class="feature-card-link"
           >
             <div class="feature-card">
@@ -240,10 +199,15 @@
               <p>
                 Cruise Mallacoota Inlet, trek scenic trails, surf at Bastion
                 Point, or paddle through tranquil mangroves.
-              </V>
+              </p>
             </div>
           </a>
-          <a href="https://coota.au" class="feature-card-link">
+          <a
+            href="https://coota.au"
+            class="feature-card-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div class="feature-card">
               <h4>The Coota Blog</h4>
               <p>
@@ -272,21 +236,7 @@
         </p>
       </div>
 
-      <div class="glass-card video-card">
-        <h2>Experience Mallacoota</h2>
-        <div class="video-container">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/0aHftLheHvU?si=0upIkLHDliExYdBs"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
+      <!-- The old video card that was here has been removed -->
     </main>
     <footer>
       <div class="footer-content">
@@ -294,7 +244,7 @@
           <a href="https://coota.au" target="_blank" rel="noopener noreferrer"
             >coota.au</a
           ><span class="separator">&bull;</span>
-          <a href="httpsD://dixon.au" target="_blank" rel="noopener noreferrer"
+          <a href="https://dixon.au" target="_blank" rel="noopener noreferrer"
             >dixon.au</a
           ><span class="separator">&bull;</span>
           <a href="https://oze.au" target="_blank" rel="noopener noreferrer"
@@ -331,7 +281,7 @@
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919 4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"
               />
             </svg>
           </a>
@@ -358,4 +308,3 @@
     </footer>
   </body>
 </html>
-
