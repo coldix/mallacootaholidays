@@ -2,10 +2,10 @@
 # Project:     Mallacoota Holidays ~ mallacootaholidays.com.au
 # Author:      Colin Dixon BSc, DipEd, Cert IV TAE
 # Contact:     crdixon@gmail.com
-# Timestamp:   14/10/2025 10:51 AM AEDT (Mallacoota)
-# Version:     [25.10.031]
+# Timestamp:   22/10/2025 12:38 PM AEDT (Mallacoota)
+# Version:     [25.10.032]
 # File Name:   style.css
-# Description: Main stylesheet for the OzeGlass theme. Added .glass-card-wide for feature grid layout.
+# Description: Main stylesheet for the OzeGlass theme. Updated max-width and merged feature grid.
 */
 :root {
   --font-family-sans: system-ui, -apple-system, "Segoe UI", "Roboto",
@@ -13,7 +13,8 @@
   --border-radius: 12px;
   --spacing-unit: 1rem;
   --transition-speed: 0.3s;
-  --max-width: 700px;
+  /* CHANGED: Increased max-width to allow for wider layouts */
+  --max-width: 1400px;
   --bg-color-light: #f0f2f5;
   --text-color-light: #1c1e21;
   --link-color-light: #0056b3;
@@ -90,6 +91,7 @@ main {
   gap: calc(var(--spacing-unit) * 1.5);
   padding: var(--spacing-unit);
   width: 100%;
+  /* Increased padding-top to make space for floating pills */
   padding-top: 6rem;
   padding-bottom: 2rem;
 }
@@ -97,9 +99,10 @@ a {
   color: var(--link-color);
   text-decoration: none;
 }
-a:hover {
+/* REMOVED: Underline on hover */
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 /* --- Glass Cards --- */
 .glass-card {
@@ -114,9 +117,10 @@ a:hover {
   width: 100%;
   max-width: var(--max-width);
 }
-.glass-card-wide {
+/* REMOVED: .glass-card-wide is no longer needed as main max-width is wider */
+/* .glass-card-wide {
   max-width: 1200px;
-}
+} */
 .hero-card {
   text-align: center;
 }
@@ -153,24 +157,33 @@ p {
   margin-bottom: 0;
 }
 
-/* --- Feature Grid (Replaces Venue Grid) --- */
+/* --- Responsive Feature Grid (Merged from index.html) --- */
 .feature-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr; /* 1 column on mobile (default) */
+  gap: 1rem;
   width: 100%;
   margin-top: 1rem;
 }
-@media (min-width: 600px) {
+
+@media (min-width: 768px) {
   .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
   }
 }
-@media (min-width: 992px) {
+
+@media (min-width: 1000px) {
   .feature-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
   }
 }
+
+@media (min-width: 1400px) {
+  .feature-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on widescreen */
+  }
+}
+
 .feature-card-link {
   text-decoration: none;
   color: var(--text-color);
@@ -197,32 +210,59 @@ p {
   margin-bottom: 0;
 }
 
-/* --- Theme Toggle --- */
-.theme-toggle {
-  position: absolute;
-  top: var(--spacing-unit);
-  right: var(--spacing-unit);
+/* --- Floating Pills (Merged from index.html) --- */
+.floating-pill {
+  position: fixed;
+  top: 1rem;
+  z-index: 1000;
   background: var(--glass-fill);
+  color: var(--text-color);
   border: 1px solid var(--glass-border);
   border-radius: 999px;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  cursor: pointer;
-  color: var(--text-color);
-  font-size: 0.875rem;
-  font-weight: 600;
   box-shadow: var(--shadow);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  z-index: 10;
+  text-decoration: none;
+  font-weight: 600;
 }
-.theme-toggle svg {
+.floating-pill:hover {
+  text-decoration: none;
+}
+.pill-left {
+  left: 1rem;
+}
+.pill-right {
+  right: 1rem;
+}
+#theme-icon svg {
   width: 16px;
   height: 16px;
+  display: block;
   fill: currentColor;
 }
+
+/* --- Header Logo Layout (Merged from index.html) --- */
+.header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+.header-title-row img {
+  height: 100px;
+  width: auto;
+}
+.header-title-row h1 {
+  margin: 0;
+}
+
+/* --- Old Theme Toggle (No longer needed) --- */
+/* .theme-toggle { ... }
+*/
 
 /* --- Footer --- */
 footer {
@@ -234,12 +274,19 @@ footer {
   margin: 0;
   background: var(--glass-fill);
   text-align: center;
+  /* Ensure footer is also wide */
+  max-width: 100%;
 }
 .footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  /* Constrain footer content to match main content */
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-unit);
 }
 .footer-section {
   text-align: center;
@@ -273,8 +320,28 @@ footer {
 .social-links a:hover {
   transform: scale(1.1);
   color: var(--link-color);
+  text-decoration: none; /* Explicitly remove hover here too */
 }
 .copyright-section {
   font-size: 0.875rem;
   opacity: 0.8;
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--glass-border);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
