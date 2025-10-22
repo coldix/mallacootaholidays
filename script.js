@@ -2,14 +2,14 @@
 # Project:     Mallacoota Holidays ~ mallacootaholidays.com.au
 # Author:      Colin Dixon BSc, DipEd, Cert IV TAE
 # Contact:     crdixon@gmail.com
-# Timestamp:   22/10/2025 12:55 PM AEDT (Mallacoota)
-# Version:     [25.10.035]
+# Timestamp:   22/10/2025 01:48 PM AEDT (Mallacoota)
+# Version:     [25.10.037]
 # File Name:   script.js
-# Description: Handles theme switching, background image, and footer info.
+# Description: Handles theme switching, background image, and footer info. Updated version info.
 */
 document.addEventListener("DOMContentLoaded", () => {
   // --- Version Info ---
-  const FILE_VERSION = "25.10.035";
+  const FILE_VERSION = "25.10.037";
   const FILE_DATE = "22 Oct 2025";
 
   // --- Theme Toggler ---
@@ -25,12 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const applyTheme = (theme) => {
     htmlElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
-    if (theme === "dark") {
-      themeLabel.textContent = "Dark";
-      themeIcon.innerHTML = icons.moon;
-    } else {
-      themeLabel.textContent = "Light";
-      themeIcon.innerHTML = icons.sun;
+    if (themeLabel && themeIcon) {
+      // Check if elements exist
+      if (theme === "dark") {
+        themeLabel.textContent = "Dark";
+        themeIcon.innerHTML = icons.moon;
+      } else {
+        themeLabel.textContent = "Light";
+        themeIcon.innerHTML = icons.sun;
+      }
     }
   };
 
